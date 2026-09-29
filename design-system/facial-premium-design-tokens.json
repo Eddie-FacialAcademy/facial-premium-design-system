@@ -1,0 +1,131 @@
+{
+  "$meta": {
+    "name": "Facial Premium Design System",
+    "version": "1.0.0",
+    "author": "Edegar Junior",
+    "source": "Logo oficial (_FA - Assets/Facial Premium/_SVG) + paleta sóbria B2B com acento petróleo",
+    "channel": "GreatPages",
+    "language": "pt-BR",
+    "themes": ["dark", "light"],
+    "defaultTheme": "dark",
+    "note": "Cores derivadas das 9 institucionais (gradiente do logo + petróleo + neutros de apoio). Nada deve sair desta paleta. Aplique tokens, nunca hex solto nos componentes."
+  },
+
+  "breakpoints": { "desktop": 1200, "tablet": 810, "phone": 390 },
+
+  "color": {
+    "brand": {
+      "ameixa": "#3A2259", "roxo": "#59378C", "roxoMedio": "#74529C", "lilas": "#C6B7DA",
+      "petroleo": "#00717F", "nevoa": "#B8C7CF", "areia": "#E3DCD2", "branco": "#FFFFFF", "grafite": "#1D1D1B"
+    },
+    "dark": {
+      "bg": "#0C0912", "bg2": "#15101D", "card": "#1C1528", "card2": "#241B33",
+      "line": "rgba(198,183,218,.14)",
+      "roxo": "#3A2259", "roxo2": "#59378C", "roxoBright": "#8561B3",
+      "lilas": "#C6B7DA", "lilasSoft": "#D6CBE5",
+      "cta": "#8561B3", "ctaGrad": "linear-gradient(120deg,#8561B3,#7956A3)", "ctaSolidH": "#7956A3", "ctaInk": "#fff",
+      "txt": "#F9F8FD", "mut": "#C4BDCF", "legalMut": "#8F80AE",
+      "acc": "#2EC5CF", "accDeep": "#22A9B3", "accOn": "#06292D", "accInk": "#2EC5CF", "accLine": "rgba(46,197,207,.42)",
+      "mist": "#B8C7CF", "mistInk": "#B8C7CF", "mistLine": "rgba(184,199,207,.42)",
+      "sand": "#E3DCD2", "logo": "#FFFFFF",
+      "success": "#45C08A", "warning": "#E8B53D", "danger": "#FF7D93", "info": "#C6B7DA",
+      "successBg": "rgba(69,192,138,.14)", "warningBg": "rgba(232,181,61,.14)", "dangerBg": "rgba(255,125,147,.14)", "infoBg": "rgba(198,183,218,.14)", "rowSel": "rgba(198,183,218,.16)",
+      "shadow": "rgba(89,55,140,.40)", "shadowStrong": "rgba(89,55,140,.50)"
+    },
+    "light": {
+      "bg": "#FAFAFA", "bg2": "#F4F2F7", "card": "#FBFAFC", "card2": "#EEEAF3",
+      "line": "rgba(89,55,140,.16)",
+      "roxo": "#3A2259", "roxo2": "#59378C", "roxoBright": "#8561B3",
+      "lilas": "#59378C", "lilasSoft": "#6A4A9E",
+      "cta": "#59378C", "ctaGrad": "linear-gradient(120deg,#59378C,#3A2259)", "ctaSolidH": "#8561B3", "ctaInk": "#fff",
+      "txt": "#1F1A26", "mut": "#5E5670", "legalMut": "#5E5670",
+      "acc": "#00717F", "accDeep": "#005C67", "accOn": "#FFFFFF", "accInk": "#00717F", "accLine": "rgba(0,113,127,.55)",
+      "mist": "#B8C7CF", "mistInk": "#4A5A63", "mistLine": "rgba(74,90,99,.50)",
+      "sand": "#E3DCD2", "logo": "#1D1D1B",
+      "success": "#147A45", "warning": "#8A5A00", "danger": "#BE2C45", "info": "#4B2F78",
+      "successBg": "rgba(31,138,91,.10)", "warningBg": "rgba(138,90,0,.10)", "dangerBg": "rgba(199,47,73,.10)", "infoBg": "rgba(75,47,120,.10)", "rowSel": "rgba(89,55,140,.10)",
+      "shadow": "rgba(89,55,140,.18)", "shadowStrong": "rgba(89,55,140,.26)"
+    }
+  },
+
+  "elevation": {
+    "roles": { "raised": "1", "overlay": "3", "modal": "4" },
+    "dark": {
+      "1": "0 1px 2px rgba(0,0,0,.34), 0 2px 6px rgba(0,0,0,.30)", "2": "0 2px 4px rgba(0,0,0,.34), 0 8px 18px rgba(0,0,0,.40)",
+      "3": "0 4px 12px rgba(0,0,0,.45), 0 16px 36px rgba(0,0,0,.55)", "4": "0 10px 24px rgba(0,0,0,.5), 0 28px 64px rgba(0,0,0,.62)"
+    },
+    "light": {
+      "1": "0 1px 2px rgba(89,55,140,.10), 0 2px 6px rgba(89,55,140,.08)", "2": "0 2px 4px rgba(89,55,140,.10), 0 8px 16px rgba(89,55,140,.12)",
+      "3": "0 4px 10px rgba(89,55,140,.12), 0 16px 32px rgba(89,55,140,.16)", "4": "0 8px 18px rgba(89,55,140,.14), 0 28px 56px rgba(89,55,140,.22)"
+    }
+  },
+
+  "radius": { "sm": "8px", "md": "14px", "lg": "18px", "pill": "30px" },
+  "foundations": {
+    "opacity": { "disabled": 0.45, "muted": 0.66, "hover": 0.08, "overlay": 0.58 },
+    "borderWidth": { "hair": "1px", "1": "1px", "2": "2px" },
+    "blur": { "sm": "6px", "md": "12px", "lg": "20px" },
+    "breakpoint": { "phone": "390px", "tablet": "810px", "desktop": "1200px" },
+    "size": { "iconSm": "16px", "icon": "20px", "iconLg": "24px", "controlH": "44px", "touchMin": "44px", "rowH": "46px", "rowHCompact": "38px", "sideW": "248px", "calCell": "38px" },
+    "aspectRatio": { "square": "1/1", "photo": "4/3", "wide": "16/9" }
+  },
+  "space":  { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "6": "24px", "8": "32px", "12": "48px" },
+  "zIndex": { "base": 0, "raised": 10, "sticky": 40, "overlay": 100, "toast": 1000 },
+  "motion": { "fast": "0.15s", "base": "0.2s", "slow": "0.4s", "ease": "cubic-bezier(.2,.8,.2,1)" },
+  "focus":  "0 0 0 2px var(--bg), 0 0 0 4px var(--focus-ring)",
+  "focusRing": { "dark": "#C6B7DA", "light": "#59378C" },
+
+  "typography": {
+    "fontFamily": "'Silka', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+    "weights": [300, 400, 500, 600, 700],
+    "note": "size = [desktop, tablet, phone] (px). No CSS use clamp() entre o phone e o desktop. Body mínimo 16px no mobile (evita zoom no iOS).",
+    "styles": {
+      "Display/H1":  { "size": [60, 44, 34], "weight": 500, "lineHeight": 1.03, "letterSpacing": "-0.025em" },
+      "Heading/H2":  { "size": [38, 32, 26], "weight": 500, "lineHeight": 1.12, "letterSpacing": "-0.02em" },
+      "Sub/H3":      { "size": [24, 22, 20], "weight": 500, "lineHeight": 1.2 },
+      "Sub/H4":      { "size": [20, 19, 18], "weight": 500, "lineHeight": 1.25, "letterSpacing": "-0.01em" },
+      "Sub/H5":      { "size": [17, 16, 16], "weight": 500, "lineHeight": 1.3 },
+      "Sub/H6":      { "size": [15, 14, 14], "weight": 500, "lineHeight": 1.35 },
+      "Eyebrow":     { "size": [12, 12, 11], "weight": 600, "lineHeight": 1.2, "letterSpacing": "0.18em", "uppercase": true, "color": "lilas" },
+      "Lead":        { "size": [18, 17, 16], "weight": 300, "lineHeight": 1.5, "color": "mut" },
+      "Body":        { "size": [16, 16, 16], "weight": 300, "lineHeight": 1.65 },
+      "BodySmall":   { "size": [14, 13, 13], "weight": 300, "lineHeight": 1.6, "color": "mut" },
+      "Numeral":     { "size": [44, 38, 32], "weight": 700, "lineHeight": 1, "tabularNums": true },
+      "Legal":       { "size": [12, 11, 11], "weight": 300, "lineHeight": 1.5, "color": "legalMut" }
+    }
+  },
+
+  "components": {
+    "button": {
+      "radius": "pill", "minHeight": "44px",
+      "variants": ["fill", "solid", "outline", "ghost", "acc", "acc-o"],
+      "sizes": { "sm": "10px 18px / 13px", "md": "14px 26px / 15px", "lg": "17px 32px / 16px" },
+      "states": ["hover", "active", "focus-visible", "disabled"],
+      "icon": "Phosphor Thin, currentColor, 18px (15 sm / 19 lg)"
+    },
+    "statusColors": ["success", "warning", "danger", "info"],
+    "prefix": "fp-",
+    "library": ["form-grid","field","input","textarea","select","check","toggle","alert","toast","spinner","skel","empty","modal","tip","pop","tabs","acc","av","crumb","pager","cardv","kbd","dtbl","cmdk","appshell","dpick","cal"],
+    "stateClasses": "is-* e active ficam sem prefixo"
+  },
+
+  "icons": { "library": "Phosphor", "weight": "Thin", "stroke": "1pt (stroke-width 1 na grade 24); ícones de domínio no Phosphor Thin oficial (grade 256)", "color": "currentColor" },
+
+  "gradients": {
+    "rule": "Somente cores do brand. NÃO usar conic, blob ou halo. Preferir meshes (radiais multiponto) e lineares.",
+    "examples": {
+      "primary": "linear-gradient(120deg,#59378C,#3A2259)",
+      "acento": "linear-gradient(120deg,#3A2259 0%,#59378C 48%,#00717F 118%)",
+      "spectral": "linear-gradient(110deg,#3A2259,#59378C 28%,#C6B7DA 54%,#B8C7CF 80%,#E3DCD2)",
+      "mesh": "radial-gradient(at 18% 22%,rgba(198,183,218,.55) 0,transparent 45%),radial-gradient(at 78% 18%,rgba(184,199,207,.30) 0,transparent 42%),radial-gradient(at 68% 78%,rgba(89,55,140,.70) 0,transparent 50%),radial-gradient(at 30% 92%,rgba(227,220,210,.22) 0,transparent 46%),#0C0912"
+    }
+  },
+
+  "accessibility": {
+    "contrast": "WCAG AA em 2 níveis: texto ≥4.5:1 (grande ≥3:1) e botão contra o fundo ≥3:1. No light, petróleo e névoa como TEXTO usam -ink.",
+    "focus": "outline:2px solid var(--lilas) + box-shadow var(--focus); guard @media (forced-colors: active).",
+    "reducedMotion": "Respeitar prefers-reduced-motion.",
+    "touchTarget": "≥44px.",
+    "colorNotAlone": "Estados semânticos sempre com ícone + texto, nunca só cor."
+  }
+}

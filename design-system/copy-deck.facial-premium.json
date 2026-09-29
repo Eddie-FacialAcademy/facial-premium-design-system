@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "brand": "facial-premium",
+    "lang": "pt-BR",
+    "version": "1.0.0",
+    "channel": "GreatPages · https://lp.facialacademy.com.br/rede-facial-premium",
+    "rules": [
+      "Chame de rede e de membro. A palavra franquia é proibida, inclusive em comparação.",
+      "Desconto sempre com 'até' e com a condição (produto, indústria, condição comercial vigente).",
+      "Sem & (use 'e'), sem travessão, sem hipérbole. Número só com fonte."
+    ]
+  },
+  "sections": {
+    "hero": {
+      "h1": "Pare de construir no escuro.",
+      "body": "O Design System da **Facial Premium**: tokens, tipografia Silka, componentes e acessibilidade prontos para montar as páginas da rede com consistência. A decisão fica no token, não no achismo."
+    },
+    "marca": { "note": "A marca da Facial Premium no digital: logo, assinatura e uso correto sobre fundo claro e escuro. Mantém leitura e contraste nos dois temas." },
+    "cores": { "note": "Paleta sóbria de empresa B2B: o roxo sai do gradiente do logo, o petróleo é o acento exclusivo do Premium e os neutros carregam a maior parte da tela." },
+    "gradientes": { "note": "Gradientes da marca em malhas e lineares, só com cores da paleta. Fundo de seção ou de imagem, nunca decoração de texto pequeno." },
+    "tipografia": { "note": "Silka em escala responsiva, com Poppins de fallback. Corpo com no mínimo 16px no celular para evitar o zoom no iOS." },
+    "icones": { "note": "Phosphor Thin, herdando a cor por currentColor. O ícone nunca substitui o rótulo." },
+    "botoes": { "note": "Variantes e tamanhos com altura mínima de 44px e raio pill. O rótulo sempre diz a ação (Quero ser membro, não Enviar)." },
+    "feedback": { "note": "Alertas, notificações e status nos quatro tons. Sempre ícone e texto juntos: a cor não comunica sozinha." },
+    "avancados": { "note": "Componentes de aplicação: tabela de dados, paleta de comandos, seletor de data e navegação. Conteúdo de exemplo da área do membro: pedidos, marketplace e economia." },
+    "acessibilidade": { "note": "Contraste WCAG AA em 2 níveis (texto e botão contra o fundo), foco visível, alvo de toque de 44px e respeito a movimento reduzido." },
+    "fundamentos": { "note": "Cores, tipografia, espaçamento e raio: a base que todo componente consome via token." },
+    "principios": { "note": "Consistência por token, paridade entre claro e escuro, acessibilidade por padrão. Decida uma vez, reaplique em todo lugar." },
+    "tokens": { "note": "Valores legíveis por máquina e a tabela de aplicação no GreatPages. O componente lê o token, não o valor solto." }
+  },
+  "landing": {
+    "eyebrow": "Rede de compras para clínicas de HOF",
+    "headline": "Compre insumos com até 40% de desconto.",
+    "subheadline": "Faça parte da rede de harmonização facial que conecta a sua clínica direto à indústria.",
+    "condition_note": "Descontos de até 40% variam por produto, indústria e condição comercial vigente.",
+    "comparison": {
+      "hoje_label": "Como você compra hoje",
+      "membro_label": "Como membro Premium",
+      "rows": [
+        ["Pagando mais caro", "Pagando até 40% mais barato"],
+        ["Não consegue parcelar", "Parcelamento em mais vezes"],
+        ["Não tem contato com as indústrias", "Criando relacionamento com as indústrias"],
+        ["Precisa fazer pedidos mínimos inviáveis", "Sem compra mínima"],
+        ["Precisa pedir de vários lugares diferentes", "Faz o pedido em um único lugar"]
+      ]
+    },
+    "how_it_works": {
+      "title": "Como fazer parte da rede",
+      "steps": [
+        "Você demonstra interesse em ser membro.",
+        "Você conversa com uma consultora.",
+        "Recebe a orientação sobre o modelo e as condições.",
+        "Envia a documentação e assina o contrato.",
+        "Recebe acesso ao marketplace."
+      ],
+      "reassurance": ["Você não precisa alterar a sua marca.", "Você não precisa alterar a sua fachada."]
+    },
+    "benefits": [
+      { "title": "Ações estratégicas", "body": "Com a economia na compra, sobra caixa para ações da clínica." },
+      { "title": "Competitividade", "body": "Aumente a margem sem mexer no preço para o cliente final." },
+      { "title": "Menos estoque", "body": "Compre conforme a necessidade, sem deixar dinheiro parado em estoque." },
+      { "title": "Praticidade de compra", "body": "Compre de várias indústrias em um único lugar." }
+    ],
+    "form": {
+      "fields": ["Nome", "E-mail", "Telefone", "CNPJ"],
+      "submit": "Quero ser membro",
+      "privacy": "Ao enviar, você concorda com os Termos de Uso e a Política de Privacidade."
+    },
+    "brand_line": "Uma marca do Grupo Facial.",
+    "_pendente": "Depoimentos: usar nome, cidade e fala real do membro. Não publicar número de economia sem a fonte."
+  },
+  "microcopy": {
+    "buttons": {
+      "principal": "Quero ser membro",
+      "cadastro": "Cadastrar minha clínica",
+      "secundario": "Ver como funciona",
+      "contato": "Falar com uma consultora",
+      "acento": "Ver economia",
+      "marketplace": "Acessar o marketplace",
+      "novo_pedido": "Novo pedido",
+      "repetir": "Repetir último pedido",
+      "cancelar": "Cancelar pedido",
+      "voltar": "Manter pedido"
+    },
+    "empty_states": [
+      { "context": "lista de pedidos vazia", "title": "Nenhum pedido ainda", "body": "Seu primeiro pedido aparece aqui assim que você comprar no marketplace da rede.", "action": "Ir para o marketplace" },
+      { "context": "busca sem resultado", "title": "Sem resultados", "body": "Nenhum insumo corresponde a esse termo. Ajuste a busca ou limpe os filtros.", "action": "Limpar filtros" },
+      { "context": "notas fiscais vazias", "title": "Nenhuma nota fiscal ainda", "body": "A nota de cada pedido aparece aqui depois do faturamento.", "action": "Ver pedidos" }
+    ],
+    "alerts": {
+      "success": { "title": "Pedido enviado", "body": "A confirmação chega no seu e-mail e no WhatsApp cadastrado." },
+      "info": { "title": "Condição nova no marketplace", "body": "Uma indústria parceira atualizou os preços desta semana. Confira quando quiser." },
+      "warning": { "title": "Estoque baixo neste item", "body": "Finalize o pedido para garantir a quantidade no carrinho." },
+      "error": { "title": "Pedido não enviado", "body": "Não foi possível concluir agora. Verifique a conexão e tente de novo." }
+    },
+    "form_validation": {
+      "required": "Campo obrigatório. Preencha para continuar.",
+      "email": "E-mail inválido. Use o formato nome@dominio.com.",
+      "telefone": "Telefone incompleto. Inclua o DDD.",
+      "cnpj": "CNPJ inválido. Confira os 14 números.",
+      "enviado": "Cadastro enviado. Uma consultora entra em contato.",
+      "erro_envio": "Não foi possível enviar. Verifique a conexão e tente de novo."
+    },
+    "confirm_destructive": {
+      "title": "Cancelar pedido?",
+      "body": "Os itens voltam para o estoque da indústria e o desconto desta condição pode não estar disponível depois.",
+      "confirm": "Cancelar pedido",
+      "cancel": "Manter pedido"
+    },
+    "tooltips": [
+      "Repete o último pedido com as quantidades que você comprou.",
+      "Filtra por indústria, categoria de insumo e faixa de preço.",
+      "Baixa a nota fiscal do pedido em PDF."
+    ]
+  },
+  "components": {
+    "data_table": {
+      "columns": ["Item", "Categoria", "Qtd.", "Estado"],
+      "rows": [
+        ["Toxina botulínica 100 U", "Toxina", "4", "Entregue"],
+        ["Ácido hialurônico 1 ml", "Preenchedor", "10", "Em trânsito"],
+        ["Bioestimulador de colágeno", "Bioestimulador", "3", "Entregue"],
+        ["Cânula 22G 50 mm", "Descartável", "50", "Aguardando pagamento"],
+        ["Hialuronidase", "Enzima", "2", "Entregue"]
+      ],
+      "empty": "Nenhum pedido por aqui ainda. Faça o primeiro no marketplace.",
+      "caption": "Pedidos da clínica"
+    },
+    "date_picker": {
+      "label": "Período do relatório de economia",
+      "help": "Escolha o intervalo para comparar o que você pagou com o preço de tabela."
+    },
+    "app_nav": {
+      "page_title": "Meus pedidos",
+      "user_initials": "AC",
+      "items": ["Início", "Pedidos", "Marketplace", "Notas fiscais", "Consultora", "Conta"]
+    },
+    "command_palette": {
+      "placeholder": "Busque insumos, pedidos ou comandos",
+      "groups": [
+        { "label": "Ações", "items": ["Novo pedido", "Repetir último pedido", "Baixar nota fiscal em PDF"] },
+        { "label": "Navegação", "items": ["Ir para Pedidos", "Ir para o Marketplace", "Abrir minha conta"] },
+        { "label": "Recentes", "items": ["Toxina botulínica 100 U", "Ácido hialurônico 1 ml"] }
+      ]
+    },
+    "tabs": ["Visão geral", "Pedidos", "Indústrias", "Economia"],
+    "accordion": [
+      { "q": "Preciso mudar a marca da clínica?", "a": "Não. Você mantém a sua marca e a sua fachada." },
+      { "q": "Existe compra mínima?", "a": "Não. Você compra conforme a necessidade da clínica, sem deixar dinheiro parado em estoque." }
+    ],
+    "breadcrumb": ["Início", "Marketplace", "Bioestimuladores"],
+    "cards": [
+      { "title": "Sem compra mínima", "desc": "Peça conforme a agenda da clínica." },
+      { "title": "Um pedido, várias indústrias", "desc": "Tudo o que a clínica usa em um único carrinho." },
+      { "title": "Parcelamento maior", "desc": "Mais prazo para pagar os insumos." },
+      { "title": "Orientação na adesão", "desc": "Uma consultora da rede explica o modelo e as condições." }
+    ]
+  }
+}
