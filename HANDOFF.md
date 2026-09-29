@@ -1,4 +1,4 @@
-# Handoff · Facial Premium Design System (versão 1.0.0 · estado em 2026-09-29)
+# Handoff · Facial Premium Design System (versão 1.1.0 · estado em 2026-09-29)
 
 Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avançar.
 

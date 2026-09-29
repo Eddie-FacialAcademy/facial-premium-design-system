@@ -14,6 +14,17 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
+## [1.1.0] · 2026-09-29
+### Alterado
+- **Nomes de cor organizados em duas camadas.** Cores da marca (`--brand-*`) levam o nome real da cor nesta marca; tokens de uso têm nomes neutros e iguais em todos os DS do grupo (`--primary`, `--accent`, `--highlight`, `--support`, `--glow`), para o código continuar portável entre marcas. Valores não mudaram: comparação de cor computada em todos os elementos do showcase, antes e depois, nos dois temas, deu zero diferença.
+- Tokens de uso: `--roxo-bright` → `--primary-bright`, `--lilas-soft` → `--accent-soft`, `--gold-deep` → `--highlight-deep`, `--gold-line` → `--highlight-line`, `--rose-line` → `--support-line`, `--mist-line` → `--support-line`, `--gold-ink` → `--highlight-ink`, `--rose-ink` → `--support-ink`, `--acc-deep` → `--highlight-deep`, `--acc-line` → `--highlight-line`, `--mist-ink` → `--support-ink`, `--acc-ink` → `--highlight-ink`, `--acc-on` → `--highlight-on`, `--roxo2` → `--primary`, `--lilas` → `--accent`, `--peach` → `--glow`, `--roxo` → `--primary-deep`, `--gold` → `--highlight`, `--rose` → `--support`, `--mist` → `--support`, `--sand` → `--glow`, `--acc` → `--highlight`.
+- JSON de tokens: chaves renomeadas igual aos tokens (camelCase) e mapa de/para em `$deprecated`.
+- Botão de acento `fp-btn fp-acc` virou `fp-btn fp-highlight` (e `fp-acc-o` virou `fp-highlight-o`). O nome antigo colidia com o acordeão `.fp-acc`, cujas regras atingiam o botão; por isso não há apelido para ele.
+- Nomes exibidos no showcase ligados à cor real: acentos compartilhados do grupo como **Dourado claro**, **Rosa claro** e **Pêssego** (antes "Amarelo claro", "Vermelho claro" e "Amarelado", com a mesma cor chamada de formas diferentes entre DS); rótulos de gradiente gerados a partir das cores de cada gradiente.
+- Documentação técnica: seção 13 virou "Relação com o molde", só com valores deste DS (a tabela anterior repetia valores de outra marca e desatualizava).
+### Descontinuado
+- Os nomes antigos listados acima continuam funcionando como apelidos no CSS de colar no site e saem na 2.0. Use os nomes novos em código novo.
+
 ## [1.0.0] · 2026-09-29
 
 Primeira versão do design system da Facial Premium.

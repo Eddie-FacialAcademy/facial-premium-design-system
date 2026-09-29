@@ -1,6 +1,6 @@
 # Facial Premium · Design System
 
-**Versão 1.0.0** · Desenvolvido por **Edegar Junior**.
+**Versão 1.1.0** · Desenvolvido por **Edegar Junior**.
 
 Design system da **Facial Premium**, a rede de compras de insumos de HOF do Grupo Facial (clínica direto com a indústria, sem atravessador; público: dono de clínica). Escuro por padrão no CSS, claro por troca de tema. Esta pasta é a **fonte da verdade** para aplicar a marca.
 
@@ -67,14 +67,14 @@ Importe `facial-premium-design-tokens.json` e gere variáveis no formato que pre
 | Texto principal | `--txt` | `#1F1A26` (16.3:1) | `#F9F8FD` |
 | Texto secundário | `--mut` | `#5E5670` (6.6:1) | `#C4BDCF` |
 | Texto legal | `--legal-mut` | `#5E5670` | `#8F80AE` |
-| Link e destaque | `--lilas` | `#59378C` (8.6:1) | `#C6B7DA` |
+| Link e destaque | `--accent` | `#59378C` (8.6:1) | `#C6B7DA` |
 | CTA (fundo do botão) | `--cta-solid` | `#59378C` (texto branco 8.9:1) | `#8561B3` (texto branco 4.8:1; 4.1:1 contra o fundo) |
 | CTA hover | `--cta-solid-h` | `#8561B3` | `#7956A3` |
-| Acento (fundo do botão) | `--acc` | `#00717F` (texto branco 5.7:1; 5.5:1 contra o fundo) | `#2EC5CF` (texto `#06292D` 7.3:1) |
-| Acento hover | `--acc-deep` | `#005C67` | `#22A9B3` |
-| Texto sobre o acento | `--acc-on` | `#FFFFFF` | `#06292D` |
-| Acento como texto | `--acc-ink` | `#00717F` (5.5:1) | `#2EC5CF` (9.4:1) |
-| Névoa como texto | `--mist-ink` | `#4A5A63` (6.9:1) | `#B8C7CF` |
+| Acento (fundo do botão) | `--highlight` | `#00717F` (texto branco 5.7:1; 5.5:1 contra o fundo) | `#2EC5CF` (texto `#06292D` 7.3:1) |
+| Acento hover | `--highlight-deep` | `#005C67` | `#22A9B3` |
+| Texto sobre o acento | `--highlight-on` | `#FFFFFF` | `#06292D` |
+| Acento como texto | `--highlight-ink` | `#00717F` (5.5:1) | `#2EC5CF` (9.4:1) |
+| Névoa como texto | `--support-ink` | `#4A5A63` (6.9:1) | `#B8C7CF` |
 | Cor do logo | `--logo` | `#1D1D1B` | `#FFFFFF` |
 
 Contrastes medidos contra o `--bg` do tema, salvo quando indicado.
@@ -107,10 +107,10 @@ A marca não tem código Pantone; a referência é o hex. **Marca sóbria:** o r
 
 ### Tema
 - **Escuro é o padrão do CSS.** Claro com `data-theme="light"` no `<html>`; sem atributo, segue `prefers-color-scheme`. No GreatPages, fixe um tema por página (ver `THEME.md`).
-- No claro, **Petróleo e Névoa como texto** usam as variantes `-ink` (`--acc-ink`, `--mist-ink`). Como preenchimento, o acento usa `--acc` com o texto em `--acc-on`.
+- No claro, **Petróleo e Névoa como texto** usam as variantes `-ink` (`--highlight-ink`, `--support-ink`). Como preenchimento, o acento usa `--highlight` com o texto em `--highlight-on`.
 
 ### CTA: token por tema (`--cta`)
-O CTA consome **`--cta`** em vez de `--roxo2` ou `--roxo-bright` direto, para garantir **contraste de componente** (WCAG 1.4.11). Tokens: `--cta-grad` · `--cta-solid` · `--cta-solid-h` · `--cta-ink`.
+O CTA consome **`--cta`** em vez de `--primary` ou `--primary-bright` direto, para garantir **contraste de componente** (WCAG 1.4.11). Tokens: `--cta-grad` · `--cta-solid` · `--cta-solid-h` · `--cta-ink`.
 
 | Tema | `--cta-solid` | `--cta-grad` | hover (`--cta-solid-h`) | `--cta-ink` |
 |---|---|---|---|---|
@@ -154,7 +154,7 @@ Silka é a base de todos os design systems do grupo; **Poppins** é o fallback e
 | Sub / H4 | 20 / 19 / 18 | 500 | 1.25 |
 | Sub / H5 | 17 / 16 / 16 | 500 | 1.3 |
 | Sub / H6 | 15 / 14 / 14 | 500 | 1.35 |
-| Eyebrow | 12 / 12 / 11 | 600 | 1.2 · caixa alta · tracking .18em · cor `--lilas` |
+| Eyebrow | 12 / 12 / 11 | 600 | 1.2 · caixa alta · tracking .18em · cor `--accent` |
 | Lead | 18 / 17 / 16 | 300 | 1.5 · cor `--mut` |
 | Body | 16 / 16 / 16 | 300 | 1.65 |
 | Body small | 14 / 13 / 13 | 300 | 1.6 |
@@ -175,11 +175,11 @@ Somente cores da paleta. **Sem cônico, blob ou halo**: use malhas (radiais mult
 
 ### Botão: `fp-btn`
 `class="fp-btn <variante> <tamanho>"`
-- **Variantes:** `fp-fill` (gradiente do CTA, primário) · `fp-solid` · `fp-outline` · `fp-ghost` (texto) · `fp-acc` (acento Petróleo) · `fp-acc-o` (acento contorno)
+- **Variantes:** `fp-fill` (gradiente do CTA, primário) · `fp-solid` · `fp-outline` · `fp-ghost` (texto) · `fp-acc` (acento Petróleo) · `fp-highlight-o` (acento contorno)
 - **Tamanhos:** `fp-sm` · (md = padrão) · `fp-lg`
 - **Estados:** hover · `:active` · `:focus-visible` · `:disabled` / `[aria-disabled="true"]`
 - **Regras:** altura mínima 44px, raio pill, ícone Phosphor opcional (`<svg class="fp-ico">`). Use `<button>` para ação na página e `<a href>` com destino real para navegação.
-- `fp-fill` usa `--cta-grad` e `--cta-ink`; `fp-solid` usa `--cta-solid` (hover `--cta-solid-h`); `fp-acc` usa `--acc`, texto `--acc-on`, borda `--acc-ink` e hover `--acc-deep`.
+- `fp-fill` usa `--cta-grad` e `--cta-ink`; `fp-solid` usa `--cta-solid` (hover `--cta-solid-h`); `fp-acc` usa `--highlight`, texto `--highlight-on`, borda `--highlight-ink` e hover `--highlight-deep`.
 - Rótulos da rede: "Quero ser membro", "Falar com uma consultora", "Ver como funciona".
 
 ### Status: `fp-status is-success | is-warning | is-danger | is-info`
@@ -190,7 +190,7 @@ Sempre **ícone e texto**, nunca só cor. Verde, âmbar e vermelho são funciona
 - **Formulário:** `fp-form-grid` · `fp-field` · `fp-field-lbl` · `fp-input` · `fp-textarea` · `fp-select` · `fp-check` · `fp-toggle` · `fp-field-help` (`fp-err`, `fp-ok`).
 - **Feedback:** `fp-alert` (`fp-ok`, `fp-info`, `fp-warn`, `fp-err`) · `fp-toast` · `fp-spinner` · `fp-skel` · `fp-empty`.
 - **Sobreposições:** `fp-modal` e `fp-modal-scrim` · `fp-tip` · `fp-pop`.
-- **Estrutura:** `fp-tabs` e `fp-tab` · `fp-acc` (acordeão; não confundir com o botão `fp-btn fp-acc`) · `fp-av` · `fp-crumb` · `fp-pager` e `fp-pg` · `fp-cardv`.
+- **Estrutura:** `fp-tabs` e `fp-tab` · `fp-highlight` (acordeão; não confundir com o botão `fp-btn fp-acc`) · `fp-av` · `fp-crumb` · `fp-pager` e `fp-pg` · `fp-cardv`.
 - **Avançados:** `fp-dtbl` · `fp-cmdk` · `fp-appshell` · `fp-dpick` · `fp-cal` · `fp-kbd` · `fp-sr-only`.
 - **Estados sem prefixo:** `is-error`, `is-success`, `is-sel`, `is-active`, `is-out`, `is-today`, `is-range`, `active`.
 
@@ -202,7 +202,7 @@ Detalhes de cada um em `IMPLEMENTACAO.md`.
 - **Contraste WCAG AA em 2 níveis:**
   - **Nível 1, texto:** ≥ 4.5:1 (texto normal) / ≥ 3:1 (texto grande). No claro, Petróleo e Névoa como texto usam `-ink`.
   - **Nível 2, botão contra o fundo:** ≥ 3:1 (WCAG 1.4.11). CTA escuro `#8561B3` (4.1:1); acento claro `#00717F` (5.5:1); acento escuro `#2EC5CF` (9.4:1).
-- **Foco visível:** `outline:2px solid var(--lilas)` e `box-shadow:var(--focus)`; guarda em `@media (forced-colors: active)`.
+- **Foco visível:** `outline:2px solid var(--accent)` e `box-shadow:var(--focus)`; guarda em `@media (forced-colors: active)`.
 - **`prefers-reduced-motion`:** transições e animações reduzidas.
 - **Toque ≥ 44px.** **Cor nunca sozinha** (estados com ícone e texto).
 

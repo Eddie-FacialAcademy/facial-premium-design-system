@@ -4,7 +4,7 @@ Design system da **Facial Premium**, a rede de compras de insumos de HOF (harmon
 
 Cor predominante: **Roxo Premium `#59378C`**. Acento exclusivo da marca: **Petróleo `#00717F`**. Tipografia: **Silka** (embutida em woff2, títulos em Medium 500).
 
-Desenvolvido por **Edegar Junior**. Versão **1.0.0** (2026-09-29).
+Desenvolvido por **Edegar Junior**. Versão **1.1.0** (2026-09-29).
 
 ## Entregas
 
@@ -50,4 +50,4 @@ A página da rede vive **só no GreatPages**: https://lp.facialacademy.com.br/re
 
 ## Changelog
 
-Ver `design-system/CHANGELOG.md`. Versão atual: **1.0.0** (primeira versão).
+Ver `design-system/CHANGELOG.md`. Versão atual: **1.1.0**; a primeira versão publicada foi a 1.0.0.

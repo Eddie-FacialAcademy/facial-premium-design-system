@@ -3,7 +3,7 @@
 Documentação técnica de **como cada item é implementado**. Canal atual: a página da rede no GreatPages (https://lp.facialacademy.com.br/rede-facial-premium). Os mesmos arquivos servem para qualquer outro projeto via tokens. Em caso de divergência, **`facial-premium-design-tokens.json` e `facial-premium-design-system.css` são a fonte da verdade**; o showcase (`index.html`) é a referência visual.
 
 - **Sem etapa de build.** O showcase é um único `index.html` self-contained (CSS em `<style>`, SVGs em `<defs><symbol>`, JS em `<script>`, Silka embutida em base64). Abre direto no navegador, sem dependência de rede.
-- **Origem:** derivado do molde Facial Academy. Mesma arquitetura de tokens, CSS e showcase; cores, logo, copy, prefixo (`fp-`) e chave de tema (`fp-theme`) são próprios da Facial Premium.
+- **Molde:** Facial Academy. Mesma arquitetura; mudam paleta, logo, prefixo de classe (`fp-`), chave de tema e copy. Ver a seção 13.
 
 ---
 
@@ -80,22 +80,22 @@ Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo derivam dele
 | `--txt` | `#F9F8FD` | `#1F1A26` (16.3:1) | texto principal |
 | `--mut` | `#C4BDCF` | `#5E5670` (6.6:1) | texto secundário |
 | `--legal-mut` | `#8F80AE` | `#5E5670` | texto legal e rodapé |
-| `--roxo` | `#3A2259` | `#3A2259` | roxo profundo (gradiente) |
-| `--roxo2` | `#59378C` | `#59378C` | primária (seleção, dia selecionado) |
-| `--roxo-bright` | `#8561B3` | `#8561B3` | roxo claro (base do CTA escuro) |
-| `--lilas` | `#C6B7DA` | `#59378C` (8.6:1) | **accent interativo** (links, ativo, foco) |
-| `--lilas-soft` | `#D6CBE5` | `#6A4A9E` | hover do accent |
+| `--primary-deep` | `#3A2259` | `#3A2259` | roxo profundo (gradiente) |
+| `--primary` | `#59378C` | `#59378C` | primária (seleção, dia selecionado) |
+| `--primary-bright` | `#8561B3` | `#8561B3` | roxo claro (base do CTA escuro) |
+| `--accent` | `#C6B7DA` | `#59378C` (8.6:1) | **accent interativo** (links, ativo, foco) |
+| `--accent-soft` | `#D6CBE5` | `#6A4A9E` | hover do accent |
 | `--logo` | `#FFFFFF` | `#1D1D1B` | cor do texto do logo SVG |
-| `--acc` | `#2EC5CF` | `#00717F` | acento Petróleo (preenchimento) |
-| `--acc-deep` | `#22A9B3` | `#005C67` | hover do acento |
-| `--acc-on` | `#06292D` (7.3:1) | `#FFFFFF` (5.7:1) | texto sobre o acento |
-| `--acc-ink` | `#2EC5CF` (9.4:1) | `#00717F` (5.5:1) | acento como texto e borda |
-| `--acc-line` | `rgba(46,197,207,.42)` | `rgba(0,113,127,.55)` | borda suave do acento |
-| `--mist` / `--mist-ink` | `#B8C7CF` / `#B8C7CF` | `#B8C7CF` / `#4A5A63` (6.9:1) | Névoa preenchimento / texto |
-| `--mist-line` | `rgba(184,199,207,.42)` | `rgba(74,90,99,.50)` | borda da Névoa |
-| `--sand` | `#E3DCD2` | `#E3DCD2` | Areia (apoio) |
+| `--highlight` | `#2EC5CF` | `#00717F` | acento Petróleo (preenchimento) |
+| `--highlight-deep` | `#22A9B3` | `#005C67` | hover do acento |
+| `--highlight-on` | `#06292D` (7.3:1) | `#FFFFFF` (5.7:1) | texto sobre o acento |
+| `--highlight-ink` | `#2EC5CF` (9.4:1) | `#00717F` (5.5:1) | acento como texto e borda |
+| `--highlight-line` | `rgba(46,197,207,.42)` | `rgba(0,113,127,.55)` | borda suave do acento |
+| `--support` / `--support-ink` | `#B8C7CF` / `#B8C7CF` | `#B8C7CF` / `#4A5A63` (6.9:1) | Névoa preenchimento / texto |
+| `--support-line` | `rgba(184,199,207,.42)` | `rgba(74,90,99,.50)` | borda da Névoa |
+| `--glow` | `#E3DCD2` | `#E3DCD2` | Areia (apoio) |
 
-Contrastes do claro medidos contra `#FAFAFA`; os do escuro contra `#0C0912`, salvo `--acc-on` (medido sobre o `--acc` do tema).
+Contrastes do claro medidos contra `#FAFAFA`; os do escuro contra `#0C0912`, salvo `--highlight-on` (medido sobre o `--highlight` do tema).
 
 #### CTA: token por tema (contraste de componente)
 
@@ -108,7 +108,7 @@ O **CTA** muda de tom entre os temas por **WCAG 1.4.11** (*Non-text Contrast*, �
 | `--cta-solid-h` | `#7956A3` | `#8561B3` | hover do sólido |
 | `--cta-ink` | `#fff` | `#fff` | texto sobre o CTA |
 
-> **Regra:** os botões fill e solid consomem **`--cta-*`**, nunca `--roxo2` ou `--roxo-bright` direto. O `--roxo2 #59378C` segue como primária para seleção.
+> **Regra:** os botões fill e solid consomem **`--cta-*`**, nunca `--primary` ou `--primary-bright` direto. O `--primary #59378C` segue como primária para seleção.
 
 **Semânticas** (sempre com ícone ou rótulo, nunca cor sozinha):
 
@@ -170,14 +170,14 @@ html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--bg);color:var(--txt);line-height:1.5;
      -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
 img,svg,video{display:block;max-width:100%}
-a{color:var(--lilas);text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 ```
 > **Atenção no GreatPages:** o reset é global (`*`, `body`, `a`). Ao colar o CSS na página, confira se os elementos nativos do editor continuam com a aparência esperada.
 
 ### 3.2 Foco visível (obrigatório)
 ```css
 a:focus-visible,button:focus-visible,.fp-btn:focus-visible,[tabindex]:focus-visible{
-  outline:2px solid var(--lilas);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
+  outline:2px solid var(--accent);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
 @media (forced-colors: active){
   a:focus-visible,button:focus-visible,.fp-btn:focus-visible{outline:2px solid Highlight!important;outline-offset:2px}}
 ```
@@ -193,7 +193,7 @@ Componentes que removem `outline` repõem com `box-shadow:var(--focus)`.
 
 ### 3.4 Tipografia
 - Pilha: `'Silka','Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif`. Silka é a base de todos os design systems do grupo, embutida em `silka.css` (pesos 300, 400, 500, 600 e 700, woff2 base64). Sem Silka: Poppins, depois `system-ui`.
-- Escala fluida com `clamp()` por papel: `.fp-eyebrow`, `.fp-h1` a `.fp-h6`, `.fp-lead`, `.fp-body`, `.fp-small`, `.fp-legal`, `.fp-num`, `.fp-hl` (destaque em `--lilas`). Ex.: `.fp-h1{font-size:clamp(34px,6vw,60px);font-weight:500;letter-spacing:-.025em;line-height:1.03}`. Corpo mínimo **16px** no celular.
+- Escala fluida com `clamp()` por papel: `.fp-eyebrow`, `.fp-h1` a `.fp-h6`, `.fp-lead`, `.fp-body`, `.fp-small`, `.fp-legal`, `.fp-num`, `.fp-hl` (destaque em `--accent`). Ex.: `.fp-h1{font-size:clamp(34px,6vw,60px);font-weight:500;letter-spacing:-.025em;line-height:1.03}`. Corpo mínimo **16px** no celular.
 - Valores por breakpoint (Desktop 1200 / Tablet 810 / Phone 390) na tabela do `DESIGN-SYSTEM.md`, para os elementos nativos do editor.
 
 ### 3.5 Ícones
@@ -240,17 +240,17 @@ Classe base **`.fp-btn`**. Composição: `.fp-btn` + variante (`.fp-fill` / `.fp
 
 /* Contorno */
 .fp-btn.fp-outline{background:transparent;color:var(--txt);border:1px solid var(--line)}
-.fp-btn.fp-outline:hover{border-color:var(--lilas);color:var(--lilas)}
+.fp-btn.fp-outline:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Texto (ghost) */
-.fp-btn.fp-ghost{background:transparent;color:var(--lilas);padding:10px 14px;border-radius:var(--radius-sm)}
-.fp-btn.fp-ghost:hover{color:var(--lilas-soft);text-decoration:underline;text-underline-offset:3px}
+.fp-btn.fp-ghost{background:transparent;color:var(--accent);padding:10px 14px;border-radius:var(--radius-sm)}
+.fp-btn.fp-ghost:hover{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px}
 
 /* Acento Petróleo e acento contorno */
-.fp-btn.fp-acc{background:var(--acc);color:var(--acc-on);border:1px solid var(--acc-ink)}
-.fp-btn.fp-acc:hover{background:var(--acc-deep)}
-.fp-btn.fp-acc-o{background:transparent;color:var(--acc-ink);border:1px solid var(--acc-line)}
-.fp-btn.fp-acc-o:hover{border-color:var(--acc-ink)}
+.fp-btn.fp-highlight{background:var(--highlight);color:var(--highlight-on);border:1px solid var(--highlight-ink)}
+.fp-btn.fp-highlight:hover{background:var(--highlight-deep)}
+.fp-btn.fp-highlight-o{background:transparent;color:var(--highlight-ink);border:1px solid var(--highlight-line)}
+.fp-btn.fp-highlight-o:hover{border-color:var(--highlight-ink)}
 ```
 Contraste do acento: escuro `#2EC5CF` com texto `#06292D` (7.3:1; hover `#22A9B3` 5.4:1); claro `#00717F` com texto branco (5.7:1; hover `#005C67` 7.7:1) e 5.5:1 contra o fundo.
 
@@ -282,7 +282,7 @@ Todos estão no `facial-premium-design-system.css`. Acessibilidade consolidada n
 ### 5.1 Chip, badge, status
 ```css
 .fp-chip{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:9px 16px;border-radius:var(--radius-pill)}
-.fp-badge{color:var(--acc-ink);border:1px solid var(--acc-line);font-size:10.5px;padding:4px 10px;border-radius:20px}
+.fp-badge{color:var(--highlight-ink);border:1px solid var(--highlight-line);font-size:10.5px;padding:4px 10px;border-radius:20px}
 .fp-status{padding:9px 15px;border-radius:var(--radius-pill);border:1px solid currentColor}
 .fp-status.is-success{color:var(--success);background:var(--success-bg)}
 .fp-status.is-warning{color:var(--warning);background:var(--warning-bg)}
@@ -295,14 +295,14 @@ Status compacto de tabela: `.fp-st` com ponto `.fp-st i` (`.fp-ok` / `.fp-warn` 
 ```css
 .fp-input,.fp-textarea,.fp-select{font:inherit;font-size:15px;color:var(--txt);background:var(--card);
   border:var(--bw-1) solid var(--line);border-radius:var(--radius-md);padding:0 14px;min-height:var(--control-h);width:100%;outline:none}
-.fp-input:focus,.fp-textarea:focus,.fp-select:focus{border-color:var(--lilas);box-shadow:var(--focus)}
+.fp-input:focus,.fp-textarea:focus,.fp-select:focus{border-color:var(--accent);box-shadow:var(--focus)}
 .fp-input.is-error{border-color:var(--danger)}  .fp-input.is-success{border-color:var(--success)}
 .fp-input:disabled{opacity:var(--opacity-disabled);cursor:not-allowed}
 .fp-input[readonly]{background:var(--card2);color:var(--mut)}
 ```
 - Estrutura: `.fp-form-grid` > `.fp-field` > `.fp-field-lbl` (com `.fp-req` para obrigatório) + controle + `.fp-field-help` (`.fp-err` / `.fp-ok`). Select com `.fp-select-wrap` e seta `.fp-car`.
-- **Checkbox e radio** (`.fp-check`): input com `appearance:none`, 20px; `:checked` pinta `var(--lilas)` e desenha a marca via `::after`. Rótulo com `min-height:44px`.
-- **Toggle** (`.fp-toggle`): trilho 42x24, bolinha de 20px que desliza de `left:2px` para `20px` em `.2s`; `:checked` pinta o trilho de `--lilas`.
+- **Checkbox e radio** (`.fp-check`): input com `appearance:none`, 20px; `:checked` pinta `var(--accent)` e desenha a marca via `::after`. Rótulo com `min-height:44px`.
+- **Toggle** (`.fp-toggle`): trilho 42x24, bolinha de 20px que desliza de `left:2px` para `20px` em `.2s`; `:checked` pinta o trilho de `--accent`.
 - Campos do cadastro na página: Nome, E-mail, Telefone, CNPJ. Mensagens de validação no `copy-deck.facial-premium.json` (ex.: "CNPJ inválido. Confira os 14 números."), sempre o que houve e como resolver.
 
 ### 5.3 Feedback
@@ -310,7 +310,7 @@ Status compacto de tabela: `.fp-st` com ponto `.fp-st i` (`.fp-ok` / `.fp-warn` 
 .fp-alert{display:flex;gap:11px;padding:13px 16px;border-radius:var(--radius-md);border:var(--bw-1) solid var(--line);background:var(--card)}
 .fp-alert.fp-ok{background:var(--success-bg);border-color:var(--success)}   /* idem fp-info, fp-warn, fp-err */
 .fp-toast{border-radius:var(--radius-pill);background:var(--card2);box-shadow:var(--elev-overlay)}
-.fp-spinner{width:28px;height:28px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--lilas);animation:spin .7s linear infinite}
+.fp-spinner{width:28px;height:28px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent);animation:spin .7s linear infinite}
 .fp-skel{background:linear-gradient(90deg,var(--card) 25%,var(--card2) 37%,var(--card) 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite}
 .fp-empty{border:1px dashed var(--line);border-radius:var(--radius-lg);text-align:center;padding:30px 20px}
 ```
@@ -331,24 +331,24 @@ Confirmação destrutiva de exemplo: "Cancelar pedido?" com "Cancelar pedido" e 
 ```css
 .fp-tabs{display:flex;gap:4px;border-bottom:var(--bw-1) solid var(--line)}
 .fp-tab{color:var(--mut);border-bottom:2px solid transparent;padding:10px 14px;margin-bottom:-1px}
-.fp-tab.active{color:var(--lilas);border-bottom-color:var(--lilas)}
+.fp-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .fp-acc summary svg{transition:transform .2s var(--ease)}              /* acordeão: seta */
 .fp-acc details[open] summary svg{transform:rotate(180deg)}           /* gira 180° ao abrir */
 .fp-av{width:40px;height:40px;border-radius:50%;background:var(--card2);border:var(--bw-1) solid var(--line)}
 .fp-av .fp-dot{background:var(--success);border:2px solid var(--bg)}   /* presença */
 .fp-av-stack .fp-av{margin-left:-12px;border:2px solid var(--bg)}      /* empilhado */
-.fp-crumb a:hover{color:var(--lilas)}  .fp-crumb .fp-cur{color:var(--txt);font-weight:500}
+.fp-crumb a:hover{color:var(--accent)}  .fp-crumb .fp-cur{color:var(--txt);font-weight:500}
 .fp-pg{min-width:40px;height:40px;border-radius:var(--radius-sm);border:var(--bw-1) solid var(--line)}
-.fp-pg.active{border-color:var(--lilas);color:var(--lilas);font-weight:600}
+.fp-pg.active{border-color:var(--accent);color:var(--accent);font-weight:600}
 ```
-O acordeão `.fp-acc` usa `<details>/<summary>` nativo (abre e fecha sem JS, acessível); corpo em `.fp-acc-body`. **Não confundir** com o botão de acento `.fp-btn.fp-acc`: o seletor do botão sempre inclui `.fp-btn`. Uso típico na página: perguntas frequentes ("Preciso mudar a marca da clínica?", "Existe compra mínima?").
+O acordeão `.fp-acc` usa `<details>/<summary>` nativo (abre e fecha sem JS, acessível); corpo em `.fp-acc-body`. **Não confundir** com o botão de acento `.fp-btn.fp-highlight`: o seletor do botão sempre inclui `.fp-btn`. Uso típico na página: perguntas frequentes ("Preciso mudar a marca da clínica?", "Existe compra mínima?").
 
 ### 5.6 Cartão
 ```css
 .fp-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--space-6)}
 .fp-cardv{background:var(--card);border:var(--bw-1) solid var(--line);border-radius:var(--radius-lg);padding:18px;overflow:hidden}
 .fp-cardv.fp-inter:hover{transform:translateY(-3px);box-shadow:var(--elev-overlay)}   /* sobe 3px, sem brilho */
-.fp-cardv-media .fp-media{height:92px;background:linear-gradient(120deg,var(--acc),var(--mist))}
+.fp-cardv-media .fp-media{height:92px;background:linear-gradient(120deg,var(--highlight),var(--support))}
 .fp-card-h .fp-thumb{width:54px;height:54px;border-radius:var(--radius-md)}           /* cartão horizontal */
 ```
 
@@ -362,14 +362,14 @@ O acordeão `.fp-acc` usa `<details>/<summary>` nativo (abre e fecha sem JS, ace
 
 **Paleta de comandos (`.fp-cmdk`)** sobre `.fp-cmdk-scrim`:
 - `width:min(520px,100%)`, campo `.fp-cmdk-in`, lista `.fp-cmdk-list{max-height:262px;overflow-y:auto}`, grupos `.fp-cmdk-grp`.
-- Item `.fp-cmdk-item`; ativo `.is-active{background:var(--row-sel)}` com ícone em `--lilas` e `.fp-kbd`. Rodapé `.fp-cmdk-foot`.
+- Item `.fp-cmdk-item`; ativo `.is-active{background:var(--row-sel)}` com ícone em `--accent` e `.fp-kbd`. Rodapé `.fp-cmdk-foot`.
 
 **App shell (`.fp-appshell`)**: `grid-template-columns:var(--side-w) 1fr`, `min-width:660px`.
 - Lateral `.fp-appside` (`.fp-ab-brand`, `.fp-navgroup-lbl`, itens, `.fp-side-foot`); barra `.fp-appbar`; conteúdo `.fp-appbody`.
-- Item `.fp-navitem`; ativo `.is-active` com faixa de 3px em `--lilas` via `::before`. Navegação de exemplo: Início, Pedidos, Marketplace, Notas fiscais, Consultora, Conta.
+- Item `.fp-navitem`; ativo `.is-active` com faixa de 3px em `--accent` via `::before`. Navegação de exemplo: Início, Pedidos, Marketplace, Notas fiscais, Consultora, Conta.
 
 **Seletor de data (`.fp-dpick` e `.fp-cal`)**: campo `.fp-dpick-field`, calendário `width:296px`, grade `.fp-cal-grid{grid-template-columns:repeat(7,1fr)}`.
-- Dia `.fp-cal-day`. Estados: `.is-out` · `.is-today` (anel `--lilas`) · `.is-range` (`--row-sel`) · `.is-sel{background:var(--roxo2);color:#fff}` (branco 8.9:1).
+- Dia `.fp-cal-day`. Estados: `.is-out` · `.is-today` (anel `--accent`) · `.is-range` (`--row-sel`) · `.is-sel{background:var(--primary);color:#fff}` (branco 8.9:1).
 
 **Utilitários:** `.fp-kbd` (tecla), `.fp-sr-only` (texto só para leitor de tela), `.fp-soon` (bloco "em breve").
 
@@ -416,10 +416,10 @@ O CSS do pacote não depende de JS. Os comportamentos abaixo existem no `index.h
 | CTA contra o fundo | `#8561B3` 4.1:1 | `#59378C` 8.6:1 |
 | Texto branco no CTA | 4.8:1 | 8.9:1 |
 | Acento contra o fundo | `#2EC5CF` 9.4:1 | `#00717F` 5.5:1 |
-| Texto sobre o acento (`--acc-on`) | `#06292D` 7.3:1 | `#FFFFFF` 5.7:1 |
+| Texto sobre o acento (`--highlight-on`) | `#06292D` 7.3:1 | `#FFFFFF` 5.7:1 |
 | Névoa como texto | `#B8C7CF` | `#4A5A63` 6.9:1 |
 
-- **Foco visível:** outline 2px `--lilas` mais `box-shadow:var(--focus)`; guarda para `forced-colors` (`Highlight`).
+- **Foco visível:** outline 2px `--accent` mais `box-shadow:var(--focus)`; guarda para `forced-colors` (`Highlight`).
 - **Cor nunca sozinha:** todo estado vem com ícone ou texto.
 - **Alvos de toque:** `--touch-min:44px` em botões, `.fp-check`, `.fp-toggle`; controles densos (paginação 40, dia 38) compensam com espaçamento.
 - **Movimento:** respeita `prefers-reduced-motion`.
@@ -479,18 +479,25 @@ O CSS do pacote não depende de JS. Os comportamentos abaixo existem no `index.h
 
 ## 13. Relação com o molde
 
-A Facial Premium herda do molde Facial Academy a arquitetura (tokens em 3 camadas, CSS de colar, showcase self-contained), as escalas, os componentes e as semânticas. O que é próprio:
+**Molde:** Facial Academy. Mesma arquitetura, JS, componentes, escalas e semânticas; o que é próprio da Facial Premium está abaixo.
+
+Valores lidos do CSS e do showcase desta versão. Esta seção não repete valores de outras marcas: cada DS documenta só os próprios, para não desatualizar.
 
 | Aspecto | Facial Premium |
 |---|---|
 | Arquivos | `facial-premium-design-system.css` · `facial-premium-design-tokens.json` · `copy-deck.facial-premium.json` |
-| Prefixo de classe | `fp-` |
+| Prefixo de classe (CSS de colar no site) | `fp-*` |
 | Chave de tema | `localStorage['fp-theme']` |
-| Canal | GreatPages (tema fixo por página) |
-| Paleta | 9 institucionais, Petróleo `#00717F` como acento exclusivo |
-| Tokens de apoio | `--acc*` (acento), `--mist*` (Névoa), `--sand` (Areia) |
-| Logo | SVGs oficiais de `_FA - Assets\Facial Premium\_SVG` |
-| Copy | rede de compras de insumos de HOF, B2B (`copy-deck.facial-premium.json`) |
+| id da paleta de comandos | `cmdk-list-fp` |
+| Token primário | `--primary` `#59378C` |
+| Destaque interativo (links, foco de campo) | `--accent` `#C6B7DA` escuro · `#59378C` claro |
+| CTA (degradê) | `#8561B3 → #7956A3` escuro · `#59378C → #3A2259` claro |
+| `--info` | `#C6B7DA` escuro · `#4B2F78` claro |
+| Foco (`--focus-ring`) | `#C6B7DA` escuro · `#59378C` claro |
+| Sombra (matiz) | `rgba(89,55,140,…)` |
+| Logo na navegação | `24px` de altura |
+
+> Trocar de marca = trocar a linha de import (`facial-premium-design-system.css`) e o prefixo de classe (`fp-`). O resto do código é igual entre os DS do mesmo molde.
 
 ---
 

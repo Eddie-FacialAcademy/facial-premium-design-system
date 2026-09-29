@@ -6,17 +6,17 @@ Desenvolvido por **Edegar Junior**.
 
 Toda cor é um token com par Claro e Escuro. Componentes consomem tokens, nunca hex solto, então trocam de tema sozinhos.
 
-### Casos especiais: CTA (`--cta`) e acento (`--acc`)
+### Casos especiais: CTA (`--cta`) e acento (`--highlight`)
 
-O **CTA** (botão preenchido ou sólido) usa os tokens **`--cta-grad` / `--cta-solid` / `--cta-solid-h` / `--cta-ink`**. Os botões `.fp-btn.fp-fill` e `.fp-btn.fp-solid` consomem `--cta`, nunca `--roxo2` ou `--roxo-bright` direto. No tema **escuro** o CTA é clareado por contraste de componente (WCAG 1.4.11):
+O **CTA** (botão preenchido ou sólido) usa os tokens **`--cta-grad` / `--cta-solid` / `--cta-solid-h` / `--cta-ink`**. Os botões `.fp-btn.fp-fill` e `.fp-btn.fp-solid` consomem `--cta`, nunca `--primary` ou `--primary-bright` direto. No tema **escuro** o CTA é clareado por contraste de componente (WCAG 1.4.11):
 
 - **Escuro:** `--cta-grad: linear-gradient(120deg,#8561B3,#7956A3)` · `--cta-solid:#8561B3` · `--cta-solid-h:#7956A3` · `--cta-ink:#fff`. Texto branco 4.8:1; botão 4.1:1 contra o fundo `#0C0912`. O `#59378C` dava 2.2:1 contra esse fundo e reprovava.
 - **Claro:** `--cta-grad: linear-gradient(120deg,#59378C,#3A2259)` · `--cta-solid:#59378C` · `--cta-solid-h:#8561B3` · `--cta-ink:#fff`. Texto branco 8.9:1.
 
-O **acento Petróleo** muda de tom entre os temas e tem um token próprio para o texto sobre ele (`--acc-on`), usado por `.fp-btn.fp-acc`:
+O **acento Petróleo** muda de tom entre os temas e tem um token próprio para o texto sobre ele (`--highlight-on`), usado por `.fp-btn.fp-highlight`:
 
-- **Escuro:** `--acc:#2EC5CF` · `--acc-deep:#22A9B3` (hover) · `--acc-on:#06292D` (texto 7.3:1) · `--acc-ink:#2EC5CF` (acento como texto, 9.4:1 no fundo).
-- **Claro:** `--acc:#00717F` · `--acc-deep:#005C67` (hover) · `--acc-on:#FFFFFF` (texto 5.7:1; botão 5.5:1 contra `#FAFAFA`) · `--acc-ink:#00717F` (acento como texto, 5.5:1).
+- **Escuro:** `--highlight:#2EC5CF` · `--highlight-deep:#22A9B3` (hover) · `--highlight-on:#06292D` (texto 7.3:1) · `--highlight-ink:#2EC5CF` (acento como texto, 9.4:1 no fundo).
+- **Claro:** `--highlight:#00717F` · `--highlight-deep:#005C67` (hover) · `--highlight-on:#FFFFFF` (texto 5.7:1; botão 5.5:1 contra `#FAFAFA`) · `--highlight-ink:#00717F` (acento como texto, 5.5:1).
 
 ---
 
@@ -27,20 +27,20 @@ Três camadas, nesta ordem:
 ```css
 /* 1) Base = escuro (padrão) */
 :root{ --bg:#0C0912; --txt:#F9F8FD; /* ... todos os tokens do escuro ... */
-  --acc:#2EC5CF; --acc-deep:#22A9B3; --acc-on:#06292D;
+  --highlight:#2EC5CF; --highlight-deep:#22A9B3; --highlight-on:#06292D;
   --cta-grad:linear-gradient(120deg,#8561B3,#7956A3); --cta-solid:#8561B3; --cta-solid-h:#7956A3; --cta-ink:#fff;
   color-scheme:dark; }
 
 /* 2) Segue o sistema: SO em claro e página sem data-theme="dark" */
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]){ --bg:#FAFAFA; --txt:#1F1A26; /* ... claro ... */
-    --acc:#00717F; --acc-deep:#005C67; --acc-on:#FFFFFF;
+    --highlight:#00717F; --highlight-deep:#005C67; --highlight-on:#FFFFFF;
     --cta-solid:#59378C; --cta-ink:#fff; color-scheme:light; }
 }
 
 /* 3) Tema fixado na página (ou escolhido no toggle) vence o sistema */
 [data-theme="light"]{ --bg:#FAFAFA; --txt:#1F1A26; /* ... claro ... */
-  --acc:#00717F; --acc-deep:#005C67; --acc-on:#FFFFFF;
+  --highlight:#00717F; --highlight-deep:#005C67; --highlight-on:#FFFFFF;
   --cta-solid:#59378C; --cta-ink:#fff; color-scheme:light; }
 [data-theme="dark"]{ /* herda o :root escuro */ }
 ```
@@ -50,7 +50,7 @@ Resultado:
 - SO claro e sem `data-theme` → **claro**
 - `data-theme` definido → **vence** o sistema
 
-> `color-scheme` em cada tema faz barras de rolagem e controles nativos acompanharem. No claro, Petróleo e Névoa **como texto** usam as variantes `-ink` (`--acc-ink`, `--mist-ink #4A5A63`).
+> `color-scheme` em cada tema faz barras de rolagem e controles nativos acompanharem. No claro, Petróleo e Névoa **como texto** usam as variantes `-ink` (`--highlight-ink`, `--support-ink #4A5A63`).
 
 ---
 
@@ -99,8 +99,8 @@ btn.addEventListener('click',function(){
 - [ ] Blocos de HTML personalizado usam classes `fp-` (tokens, nunca hex solto).
 - [ ] Elementos nativos do editor usam os valores da tabela do **mesmo** tema.
 - [ ] No claro, Petróleo e Névoa como texto usam `-ink`.
-- [ ] Botão de acento usa `--acc-on` para o texto (escuro `#06292D`, claro `#FFFFFF`).
+- [ ] Botão de acento usa `--highlight-on` para o texto (escuro `#06292D`, claro `#FFFFFF`).
 - [ ] **Texto** ≥ 4.5:1 (nível 1).
 - [ ] **CTA e componentes contra o fundo** ≥ 3:1 nos **dois temas** (nível 2); CTA escuro usa `#8561B3`.
-- [ ] CTA preenchido ou sólido consome `--cta-*`, nunca `--roxo2` ou `--roxo-bright` direto.
+- [ ] CTA preenchido ou sólido consome `--cta-*`, nunca `--primary` ou `--primary-bright` direto.
 - [ ] Conferir no tema escolhido: contraste de texto, de componente e legibilidade.
